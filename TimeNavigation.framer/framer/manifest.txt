@@ -53,3 +53,4 @@ index.html
 modules/myModule.coffee
 modules/Pointer.coffee
 PersonalBoards.sketch
+README.md

@@ -7,7 +7,7 @@ helper = new Layer
 	height: Screen.height
 	
 # Setup width of progress bar based on currentTime
-progressWidth = 200
+progressWidth = 0
 
 # Set up current time and total time
 totalTime = 235
@@ -54,7 +54,7 @@ progressBarUpdate = (layer, event) ->
 	return progressBar.animate
 		properties:
 			width: progressBarWidth
-		time: 1
+		time: 0.4
 		curve: "ease-out"
 
 # Show the timer
@@ -79,17 +79,20 @@ timeInMinutesSeconds = (secs) ->
 	
 	return "#{minutes}:#{seconds}"
 
+# Update the time based on width of the progress bar
+timeUpdate = ->
+	progressBar.on "change:width", ->
+		secs = Utils.modulate(progressBar.width, [0, Screen.width], [0, totalTime])
+		time.html = timeInMinutesSeconds(secs)
+
+# Do things on touch events
 helper.on Events.TouchStart, ->
 	progressBarShow()
 	timeShow()
 
 helper.on Events.TouchMove, (event, layer) ->
 	progressBarUpdate(layer, event)
-	
-	# Update the time based on width of the progress bar
-	progressBar.on "change:width", ->
-		secs = Utils.modulate(progressBar.width, [0, Screen.width], [0, totalTime])
-		time.html = timeInMinutesSeconds(secs)
+	timeUpdate()
 
 helper.on Events.TouchEnd, ->
 	progressBarHide()
