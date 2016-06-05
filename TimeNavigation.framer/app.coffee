@@ -7,7 +7,7 @@ helper = new Layer
 	height: Screen.height
 	
 # Setup width of progress bar based on currentTime
-progressWidth = 0
+progressWidth = 312
 
 # Set up current time and total time
 totalTime = 235
@@ -28,7 +28,7 @@ time = new Layer
 	x: Align.center
 	y: Align.center
 	backgroundColor: "transparent"
-	opacity: 0
+	opacity: 0.75
 	style:
 		"font-size": "100px"
 	
@@ -61,15 +61,15 @@ progressBarUpdate = (layer, event) ->
 timeShow = ->
 	return time.animate
 		properties:
-			opacity: 1
-		time: 0.2
+			opacity: 0.75
+		time: 0.4
 		
 # Hide the timer
 timeHide = ->
 	return time.animate
 		properties:
-			opacity: 1
-		time: 0.2
+			opacity: 0
+		time: 0.4
 
 # Change the current number of seconds in m:ss format
 timeInMinutesSeconds = (secs) ->
@@ -85,7 +85,6 @@ timeUpdate = ->
 		secs = Utils.modulate(progressBar.width, [0, Screen.width], [0, totalTime])
 		time.html = timeInMinutesSeconds(secs)
 
-# Do things on touch events
 helper.on Events.TouchStart, ->
 	progressBarShow()
 	timeShow()
