@@ -14,12 +14,12 @@ framer/backups/backup-2016-06-04 19.20.29.coffee
 framer/backups/backup-2016-06-04 19.21.29.coffee
 framer/backups/backup-2016-06-04 19.22.29.coffee
 framer/backups/backup-2016-06-04 19.23.29.coffee
-framer/backups/backup-2016-06-04 19.25.29.coffee
 framer/backups/backup-2016-06-04 20.40.01.coffee
 framer/backups/backup-2016-06-04 20.52.54.coffee
 framer/backups/backup-2016-06-04 20.53.54.coffee
 framer/backups/backup-2016-06-04 20.54.54.coffee
 framer/backups/backup-2016-06-04 20.55.54.coffee
+framer/backups/backup-2016-06-05 18.40.33.coffee
 framer/coffee-script.js
 framer/config.json
 framer/framer.generated.js
